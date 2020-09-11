@@ -2,5 +2,6 @@
 -main RunTests
 -dce full
 -lib tink_unittest
+-lib exp-ecs
 
 # -D analyzer-optimize
