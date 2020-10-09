@@ -8,9 +8,9 @@ class EventEmitter<Event> {
 	var trigger:SignalTrigger<Event>;
 	var postSystemUpdate:Array<Event>;
 	var postEngineUpdate:Array<Event>;
-	var engine:Engine<Event>;
+	var engine:Engine<Any>;
 	
-	function new(engine) {
+	public function new(engine) {
 		this.engine = engine;
 		trigger = Signal.trigger();
 		postSystemUpdate = [];
