@@ -1,6 +1,7 @@
 package exp.ecs.entity;
 
 import exp.ecs.component.*;
+
 using tink.CoreApi;
 
 class Entity {
@@ -16,8 +17,8 @@ class Entity {
 	
 	static var ids:Int = 0;
 	
-	public function new(?name) {
-		this.id = ++ids;
+	public function new(id:Int = 0, ?name) {
+		this.id = id == 0 ? ++ids : id;
 		this.name = name;
 		components = new Map();
 		componentAdded = componentAddedTrigger = Signal.trigger();
