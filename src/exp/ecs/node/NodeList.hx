@@ -2,8 +2,9 @@ package exp.ecs.node;
 
 import exp.ecs.entity.*;
 import exp.ecs.util.*;
-using tink.CoreApi;
+
 using Lambda;
+using tink.CoreApi;
 
 class NodeList<T:NodeBase> {
 	public var length(get, never):Int;
@@ -70,6 +71,7 @@ class NodeList<T:NodeBase> {
 	}
 	
 	public inline function iterator() return new ConstArrayIterator(_nodes);
+	public inline function keyValueIterator() return new ConstKeyValueArrayIterator(_nodes);
 	
 	inline function get_nodes():ReadOnlyArray<T> return _nodes;
 	inline function get_length() return _nodes.length;
